@@ -1,0 +1,69 @@
+<div class="login-wrap">
+  <img
+    class="hero-bg"
+    src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=1600&h=1200&fit=crop&auto=format"
+    alt="PC Gamer com iluminação RGB"
+  />
+  <div class="hero-overlay"></div>
+
+  <div class="login-box">
+    <a routerLink="/" class="voltar-site">&larr; Voltar ao site</a>
+
+    <a routerLink="/" class="nx-logo">
+      <span class="nx-logo-mark"></span>
+      <span class="nx-logo-text">NEXTECH<span>.</span></span>
+    </a>
+
+    <h1>Bem-vindo de volta</h1>
+    <p class="login-lead">Entre para acompanhar pedidos e ofertas exclusivas do mundo gamer.</p>
+
+    @if (mensagem()) {
+      <div class="alerta-nx" [class.erro]="mensagem()!.tipo === 'erro'">
+        {{ mensagem()!.texto }}
+      </div>
+    }
+
+    <form class="login-form" [formGroup]="form" (ngSubmit)="entrar()">
+      <mat-form-field appearance="outline">
+        <mat-label>E-mail</mat-label>
+        <input matInput formControlName="email" placeholder="seu&#64;email.com" />
+        @if (form.controls.email.invalid && form.controls.email.touched) {
+          <mat-error>Informe um e-mail válido.</mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Senha</mat-label>
+        <input
+          matInput
+          formControlName="senha"
+          [type]="senhaVisivel() ? 'text' : 'password'"
+          placeholder="Sua senha"
+        />
+        <button
+          mat-icon-button
+          matSuffix
+          type="button"
+          (click)="alternarSenha()"
+          [attr.aria-label]="senhaVisivel() ? 'Ocultar senha' : 'Mostrar senha'"
+        >
+          <mat-icon>{{ senhaVisivel() ? 'visibility_off' : 'visibility' }}</mat-icon>
+        </button>
+        @if (form.controls.senha.invalid && form.controls.senha.touched) {
+          <mat-error>A senha deve ter no mínimo 6 caracteres.</mat-error>
+        }
+      </mat-form-field>
+
+      <div class="login-row">
+        <mat-checkbox formControlName="lembrarMe">Lembrar-me</mat-checkbox>
+        <a href="#">Esqueci minha senha</a>
+      </div>
+
+      <button type="submit" class="btn-nx btn-nx-primary btn-login" [disabled]="enviando()">
+        Entrar
+      </button>
+    </form>
+
+    <p class="login-footer">Ainda não tem conta? Use qualquer e-mail e senha (6+) para simular um cadastro.</p>
+  </div>
+</div>

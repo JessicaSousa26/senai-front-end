@@ -24,3 +24,7 @@ Protótipo de referência: https://dawn-polish-16533500.figma.site/site
 ## Como executar
 
 Basta abrir o arquivo `index.html` em um navegador — não há dependências de build. Todas as bibliotecas (Google Fonts, Bootstrap, jQuery) são carregadas via CDN.
+
+## Versão Angular
+
+A pasta [`nextech-angular/`](nextech-angular/) contém a reimplementação do mesmo site em **Angular + Angular Material**, feita para a atividade de Codificação Front-End com framework. Veja o [README dela](nextech-angular/README.md) para detalhes de arquitetura e instruções de execução.

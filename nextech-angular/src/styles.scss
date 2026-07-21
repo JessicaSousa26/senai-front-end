@@ -1,0 +1,154 @@
+// ==========================================================================
+// NEXTECH — estilos globais (Angular Material + Bootstrap + tokens da marca)
+// ==========================================================================
+@use '@angular/material' as mat;
+
+html {
+  height: 100%;
+  color-scheme: dark;
+  @include mat.theme(
+    (
+      color: (
+        theme-type: dark,
+        primary: mat.$blue-palette,
+        tertiary: mat.$azure-palette,
+      ),
+      typography: Inter,
+      density: 0,
+    )
+  );
+}
+
+// ---------------- Tokens da marca NexTech ----------------
+:root {
+  --nx-bg: #08080f;
+  --nx-bg-alt: #0a0a12;
+  --nx-card: #0f0f1a;
+  --nx-img-bg: #141424;
+  --nx-border: #1e1e38;
+  --nx-text: #f0f0f8;
+  --nx-white: #ffffff;
+  --nx-muted: #a0a0c0;
+  --nx-muted-2: #6060a0;
+  --nx-blue: #0057ff;
+  --nx-green: #00e676;
+  --nx-red: #ff1744;
+  --nx-font-display: 'Rajdhani', sans-serif;
+  --nx-font-body: 'Inter', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color-scheme: dark;
+  background-color: var(--nx-bg);
+  color: var(--nx-text);
+  font: 400 16px/1.6 var(--nx-font-body);
+  margin: 0;
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--nx-font-display);
+  margin: 0;
+}
+
+.container-nx {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.eyebrow {
+  font-family: var(--nx-font-display);
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: var(--nx-blue);
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: clamp(32px, 5vw, 64px);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.05;
+}
+
+.section-head {
+  margin-bottom: 56px;
+}
+
+.btn-nx {
+  display: inline-block;
+  padding: 14px 36px;
+  font-family: var(--nx-font-display);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid var(--nx-border);
+  background: transparent;
+  color: var(--nx-white);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-nx-primary {
+  background-color: var(--nx-blue);
+  border-color: var(--nx-blue);
+}
+.btn-nx-primary:hover {
+  background-color: #0046d1;
+}
+.btn-nx-outline:hover {
+  border-color: var(--nx-blue);
+  color: var(--nx-blue);
+}
+
+.badge-nx {
+  display: inline-block;
+  font-size: 9px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  padding: 3px 8px;
+  text-transform: uppercase;
+}
+.badge-verde {
+  background-color: var(--nx-green);
+  color: #000;
+}
+.badge-azul {
+  background-color: var(--nx-blue);
+  color: #fff;
+}
+.badge-vermelho {
+  background-color: var(--nx-red);
+  color: #fff;
+}
+
+// Ajustes finos dos componentes do Angular Material para o tema escuro NexTech
+.mat-mdc-snack-bar-container {
+  --mdc-snackbar-container-color: var(--nx-card);
+  --mdc-snackbar-supporting-text-color: var(--nx-text);
+  --mat-snack-bar-button-color: var(--nx-blue);
+  border: 1px solid var(--nx-border);
+}
+
+.mdc-dialog__surface {
+  background-color: var(--nx-card) !important;
+  border: 1px solid var(--nx-border);
+}

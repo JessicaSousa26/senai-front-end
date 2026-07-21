@@ -1,0 +1,70 @@
+<section id="contato" class="contato">
+  <div class="container-nx">
+    <div class="section-head">
+      <p class="eyebrow">Contato</p>
+      <h2 class="section-title">Fale conosco</h2>
+    </div>
+
+    <div class="contato-grid">
+      <div class="contato-card">
+        <h3>INFORMAÇÕES</h3>
+        <div class="contato-info">
+          <div><label>Telefone</label><span>(11) 99999-8888</span></div>
+          <div><label>E-mail</label><span>contato&#64;nextech.com.br</span></div>
+          <div><label>Localização</label><span>Rua da Tecnologia, 420<br />São Paulo, SP – 01310-000</span></div>
+        </div>
+        <div class="redes-sociais">
+          <label>Redes Sociais</label>
+          <div class="rs-links">
+            <a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="contato-card">
+        <h3>ENVIE UMA MENSAGEM</h3>
+        <form class="form-nx" [formGroup]="form" (ngSubmit)="enviar()">
+          <mat-form-field appearance="outline">
+            <mat-label>Nome completo</mat-label>
+            <input matInput formControlName="nome" placeholder="Seu nome" />
+            @if (form.controls.nome.invalid && form.controls.nome.touched) {
+              <mat-error>Informe seu nome completo.</mat-error>
+            }
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>E-mail</mat-label>
+            <input matInput formControlName="email" placeholder="seu&#64;email.com" />
+            @if (form.controls.email.invalid && form.controls.email.touched) {
+              <mat-error>Informe um e-mail válido.</mat-error>
+            }
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Telefone</mat-label>
+            <input matInput formControlName="telefone" placeholder="(11) 00000-0000" />
+            @if (form.controls.telefone.invalid && form.controls.telefone.touched) {
+              <mat-error>Informe um telefone válido.</mat-error>
+            }
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Mensagem</mat-label>
+            <textarea
+              matInput
+              formControlName="mensagem"
+              rows="4"
+              placeholder="Como podemos ajudar?"
+            ></textarea>
+            @if (form.controls.mensagem.invalid && form.controls.mensagem.touched) {
+              <mat-error>Escreva uma mensagem.</mat-error>
+            }
+          </mat-form-field>
+
+          <button type="submit" class="btn-nx btn-nx-primary">Enviar Mensagem</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

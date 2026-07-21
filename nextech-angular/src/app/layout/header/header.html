@@ -1,0 +1,39 @@
+<nav class="navbar-nx">
+  <div class="container-nx nav-inner">
+    <a routerLink="/" class="nx-logo" (click)="fecharMenu()">
+      <span class="nx-logo-mark"></span>
+      <span class="nx-logo-text">NEXTECH<span>.</span></span>
+    </a>
+
+    <ul class="nav-desktop" [class.open]="menuAberto()">
+      @for (link of links; track link.href) {
+        <li><a [href]="link.href" (click)="fecharMenu()">{{ link.label }}</a></li>
+      }
+    </ul>
+
+    <div class="nav-actions">
+      <a routerLink="/login" mat-icon-button title="Entrar" aria-label="Entrar">
+        <mat-icon>person_outline</mat-icon>
+      </a>
+      <button
+        mat-icon-button
+        title="Carrinho"
+        aria-label="Carrinho"
+        [matBadge]="quantidadeCarrinho()"
+        [matBadgeHidden]="quantidadeCarrinho() === 0"
+        matBadgeColor="primary"
+        matBadgeSize="small"
+      >
+        <mat-icon>shopping_cart</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        class="nav-mobile-toggle"
+        (click)="alternarMenu()"
+        aria-label="Abrir menu"
+      >
+        <mat-icon>{{ menuAberto() ? 'close' : 'menu' }}</mat-icon>
+      </button>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,39 @@
+<section id="sobre" class="sobre">
+  <div class="container-nx">
+    <div class="sobre-grid">
+      <div>
+        <p class="eyebrow">Sobre nós</p>
+        <h2>Feito por<br />quem joga.</h2>
+        <div class="sobre-texto">
+          <p>
+            Somos apaixonados pelo mundo gamer e tecnológico. Entendemos o que você precisa
+            porque vivemos esse universo — do setup para trabalho à máquina para rodar os games
+            mais exigentes.
+          </p>
+          <p>
+            Nossa missão é inspirar e valorizar a paixão pela tecnologia, jogos, entretenimento e
+            inovação, criando experiências únicas para cada cliente.
+          </p>
+        </div>
+        <div class="sobre-valores">
+          @for (valor of valores; track valor.titulo) {
+            <div>
+              <strong>{{ valor.titulo }}</strong>
+              <span>{{ valor.texto }}</span>
+            </div>
+          }
+        </div>
+      </div>
+      <div class="sobre-img-wrap">
+        <img
+          src="https://images.unsplash.com/photo-1616588589676-62b3bd4ff6d2?w=700&h=800&fit=crop&auto=format"
+          alt="Setup gamer completo"
+        />
+        <div class="sobre-stat">
+          <strong>14–40</strong>
+          <span>Anos de público</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

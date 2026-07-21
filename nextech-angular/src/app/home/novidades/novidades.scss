@@ -1,0 +1,134 @@
+.novidades {
+  padding: 100px 0;
+
+  @media (max-width: 767px) {
+    padding: 64px 0;
+  }
+}
+
+.carousel-wrap {
+  position: relative;
+  padding-bottom: 40px;
+  border: 1px solid var(--nx-border);
+}
+
+.carousel-viewport {
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+.slide {
+  flex: 0 0 100%;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  min-height: 420px;
+  background-color: var(--nx-card);
+
+  @media (max-width: 991px) {
+    grid-template-columns: 1fr;
+    min-height: unset;
+  }
+}
+
+.nv-img {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--nx-img-bg);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+  }
+
+  @media (max-width: 991px) {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+.nv-content {
+  padding: 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media (max-width: 991px) {
+    padding: 36px 28px;
+  }
+
+  .badge-nx {
+    width: fit-content;
+    margin-bottom: 18px;
+  }
+
+  h3 {
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--nx-white);
+    margin-bottom: 12px;
+  }
+
+  p {
+    font-size: 14px;
+    color: var(--nx-muted);
+    margin-bottom: 28px;
+    line-height: 1.7;
+  }
+
+  .prod-price {
+    font-family: var(--nx-font-display);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--nx-blue);
+    margin-bottom: 24px;
+    display: block;
+  }
+
+  .btn-nx {
+    width: fit-content;
+  }
+}
+
+.carousel-nav {
+  position: absolute;
+  top: calc(50% - 20px);
+  transform: translateY(-50%);
+  color: var(--nx-white) !important;
+  background-color: rgba(8, 8, 15, 0.5) !important;
+
+  &.prev {
+    left: 12px;
+  }
+  &.next {
+    right: 12px;
+  }
+}
+
+.carousel-dots {
+  position: absolute;
+  bottom: 12px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--nx-border);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+
+  &.active {
+    background-color: var(--nx-blue);
+  }
+}

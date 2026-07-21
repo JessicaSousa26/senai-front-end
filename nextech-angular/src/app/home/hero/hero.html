@@ -1,0 +1,32 @@
+<section id="inicio" class="hero">
+  <img
+    class="hero-bg"
+    src="https://images.unsplash.com/photo-1593640408182-31c228c8f91e?w=1600&h=900&fit=crop&auto=format"
+    alt="Setup gamer iluminado com RGB"
+  />
+  <div class="hero-overlay"></div>
+
+  <div class="container-nx">
+    <div class="hero-inner">
+      <p class="eyebrow">— Mundo Gamer &amp; Tecnologia</p>
+      <h1>ELEVE<br /><span class="accent">SUA</span><br />PERFORMANCE</h1>
+      <p class="hero-lead">
+        Equipamentos selecionados para quem leva tecnologia e jogos a sério. Do setup casual ao
+        profissional — encontre o que você precisa.
+      </p>
+      <div class="hero-ctas">
+        <a href="#destaques" class="btn-nx btn-nx-primary">Ver Produtos</a>
+        <a href="#categorias" class="btn-nx btn-nx-outline">Explorar</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    @for (stat of stats; track stat.rotulo) {
+      <div>
+        <strong>{{ stat.valor }}</strong>
+        <span>{{ stat.rotulo }}</span>
+      </div>
+    }
+  </div>
+</section>

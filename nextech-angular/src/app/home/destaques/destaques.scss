@@ -1,0 +1,118 @@
+.destaques {
+  background-color: var(--nx-bg-alt);
+  padding: 100px 0;
+
+  @media (max-width: 767px) {
+    padding: 64px 0;
+  }
+}
+
+.destaques-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 56px;
+  flex-wrap: wrap;
+  gap: 16px;
+
+  @media (max-width: 767px) {
+    margin-bottom: 36px;
+  }
+}
+
+.link-ver-todos {
+  font-size: 12px;
+  color: var(--nx-blue);
+  text-decoration: none;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-bottom: 1px solid var(--nx-blue);
+  padding-bottom: 2px;
+}
+
+.prod-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 2px;
+}
+
+.prod-card {
+  background-color: var(--nx-card);
+  overflow: hidden;
+
+  &:hover .prod-thumb img {
+    transform: scale(1.06);
+  }
+}
+
+.prod-thumb {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background-color: var(--nx-img-bg);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.85;
+    transition: transform 0.4s;
+  }
+
+  .badge-nx {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+  }
+}
+
+.prod-info {
+  padding: 22px 24px 26px;
+
+  h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: var(--nx-white);
+  }
+}
+
+.prod-specs {
+  font-size: 11px;
+  color: var(--nx-muted-2);
+  letter-spacing: 0.5px;
+  margin-bottom: 18px;
+}
+
+.prod-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.prod-price {
+  font-family: var(--nx-font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--nx-blue);
+}
+
+.btn-comprar {
+  background: transparent;
+  border: 1px solid var(--nx-border);
+  color: var(--nx-muted);
+  padding: 8px 18px;
+  cursor: pointer;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: 0.2s;
+  font-family: var(--nx-font-body);
+
+  &:hover {
+    border-color: var(--nx-blue);
+    color: var(--nx-blue);
+  }
+}

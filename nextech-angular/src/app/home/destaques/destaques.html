@@ -1,0 +1,34 @@
+<section id="destaques" class="destaques">
+  <div class="container-nx">
+    <div class="destaques-head">
+      <div>
+        <p class="eyebrow">Produtos</p>
+        <h2 class="section-title">Destaques</h2>
+      </div>
+      <a href="#contato" class="link-ver-todos">Ver todos os produtos →</a>
+    </div>
+
+    <div class="prod-grid">
+      @for (produto of produtos; track produto.id) {
+        <div class="prod-card">
+          <div class="prod-thumb">
+            <img [src]="produto.imagem" [alt]="produto.nome" />
+            @if (produto.temBadge()) {
+              <span class="badge-nx" [class]="'badge-' + produto.badgeTipo">{{
+                produto.badgeTexto
+              }}</span>
+            }
+          </div>
+          <div class="prod-info">
+            <h3>{{ produto.nome }}</h3>
+            <p class="prod-specs">{{ produto.especificacoes }}</p>
+            <div class="prod-footer">
+              <span class="prod-price">{{ produto.precoFormatado() }}</span>
+              <button class="btn-comprar" (click)="comprar(produto)">Comprar</button>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

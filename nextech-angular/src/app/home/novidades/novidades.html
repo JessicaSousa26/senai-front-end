@@ -1,0 +1,51 @@
+<section id="novidades" class="novidades">
+  <div class="container-nx">
+    <div class="section-head">
+      <p class="eyebrow">Chegaram agora</p>
+      <h2 class="section-title">Novidades</h2>
+    </div>
+
+    <div class="carousel-wrap">
+      <div class="carousel-viewport">
+        <div class="carousel-track" [style.transform]="'translateX(-' + indiceAtual() * 100 + '%)'">
+          @for (produto of slides; track produto.id) {
+            <div class="slide">
+              <div class="nv-img">
+                <img [src]="produto.imagem" [alt]="produto.nome" />
+              </div>
+              <div class="nv-content">
+                <span class="badge-nx" [class]="'badge-' + produto.badgeTipo">{{
+                  produto.badgeTexto
+                }}</span>
+                <h3>{{ produto.nome }}</h3>
+                <p>{{ produto.especificacoes }} — direto do estoque NexTech.</p>
+                <span class="prod-price">{{ produto.precoFormatado() }}</span>
+                <button class="btn-nx btn-nx-primary" (click)="comprar(produto)">
+                  Comprar agora
+                </button>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+
+      <button mat-icon-button class="carousel-nav prev" (click)="anterior()" aria-label="Anterior">
+        <mat-icon>chevron_left</mat-icon>
+      </button>
+      <button mat-icon-button class="carousel-nav next" (click)="proximo()" aria-label="Próximo">
+        <mat-icon>chevron_right</mat-icon>
+      </button>
+
+      <div class="carousel-dots">
+        @for (produto of slides; track produto.id; let i = $index) {
+          <button
+            class="dot"
+            [class.active]="i === indiceAtual()"
+            (click)="irPara(i)"
+            [attr.aria-label]="'Ir para o slide ' + (i + 1)"
+          ></button>
+        }
+      </div>
+    </div>
+  </div>
+</section>

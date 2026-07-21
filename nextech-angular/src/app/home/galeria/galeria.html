@@ -1,0 +1,16 @@
+<section id="galeria" class="galeria">
+  <div class="container-nx">
+    <div class="section-head">
+      <p class="eyebrow">Galeria</p>
+      <h2 class="section-title">Nosso universo gamer</h2>
+    </div>
+
+    <div class="gal-grid">
+      @for (imagem of imagens; track imagem; let i = $index) {
+        <button class="gal-item" (click)="abrir(imagem, i)" [attr.aria-label]="'Ampliar imagem ' + (i + 1)">
+          <img [src]="imagem" alt="Imagem da galeria NexTech" />
+        </button>
+      }
+    </div>
+  </div>
+</section>
