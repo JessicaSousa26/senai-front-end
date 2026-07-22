@@ -28,3 +28,7 @@ Basta abrir o arquivo `index.html` em um navegador — não há dependências de
 ## Versão Angular
 
 A pasta [`nextech-angular/`](nextech-angular/) contém a reimplementação do mesmo site em **Angular + Angular Material**, feita para a atividade de Codificação Front-End com framework. Veja o [README dela](nextech-angular/README.md) para detalhes de arquitetura e instruções de execução.
+
+## Consumo de API (Loja de Jogos)
+
+A pasta [`loja-jogos/`](loja-jogos/) contém uma atividade separada, do módulo de Consumo de API: uma aplicação Angular (NgModule) que lista e cadastra produtos consumindo uma API REST simulada com JSON-Server. Veja o [README dela](loja-jogos/README.md) para instruções de execução.
